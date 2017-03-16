@@ -1,0 +1,131 @@
+<!doctype html>
+
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Titulo</title>
+  <meta name="description" content="8aDG">
+  <meta name="author" content="8aDG">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+  <script src="js/scrollReveal.js"></script>
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="font/flaticon.css">
+  <link rel="stylesheet" href="css/swipebox.css">
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+
+    <link rel="stylesheet" href="js/assets/owl.carousel.min.css">
+    	<link rel="stylesheet" href="js/assets/owl.theme.default.min.css">
+        <script src="js/jquery.min.js"></script>
+    <script src="js/owl.carousel.js"></script>
+
+
+</head>
+
+<body>
+<div class="container-fluid video_cont">
+<div class="row">
+ <div class="maqueta_video">&nbsp;&nbsp;&nbsp;<span class="gui_rep"></span></div><!-- 1024x576 tamaño de reproductor -->
+</div>
+
+</div>
+<div class="container-fluid strip"><!-- usar container bootstrap -->
+
+<div class="row"><!-- usar row bootstrap -->
+<div class="t1 titulo_strip"><img src="img/film-strip.svg" style="mix-blend-mode: multiply;width: 40px;opacity: 0.3;position: relative;"> PROXIMAMENTE</div>
+<div class="owl-carousel">
+
+<!-- modulo a repetir -->
+<div id="box" style="background: url('https://img.youtube.com/vi/_hi_IyfrZfM/hqdefault.jpg');background-size: cover;background-position:center center;background-size: 110%;"><!-- url('https://img.youtube.com/vi/_hi_IyfrZfM/0.jpg') -->
+  <a href="/#">
+  <div id="overlay">
+    <span id="plus"><p class="t1" id="ytTitle"></p></span><!-- $TITULO -->
+  </div>
+  </a>
+</div>
+<!-- modulo a repetir -->
+<!-- modulo a repetir -->
+<div id="box" style="background: url('https://img.youtube.com/vi/xyEL6Reh6o8/hqdefault.jpg');background-size: cover;background-position:center center;background-size: 110%;"><!-- url('img/$imagenXX') -->
+  <a href="/#">
+  <div id="overlay">
+    <span id="plus"><p class="t1">Voces por el Canal</p></span><!-- $TITULO -->
+  </div>
+  </a>
+</div>
+<!-- modulo a repetir --><!-- modulo a repetir -->
+<div id="box" style="background: url('https://img.youtube.com/vi/WKugoR55dkA/hqdefault.jpg');background-size: cover;background-position:center center;background-size: 110%;"><!-- url('img/$imagenXX') -->
+  <a href="/#">
+  <div id="overlay">
+    <span id="plus"><p class="t1">No te quedes callada</p></span><!-- $TITULO -->
+  </div>
+  </a>
+</div>
+<!-- modulo a repetir --><!-- modulo a repetir -->
+<div id="box" style="background: url('https://img.youtube.com/vi/y31FuQgS7uo/hqdefault.jpg');background-size: cover;background-position:center center;background-size: 110%;"><!-- url('img/$imagenXX') -->
+  <a href="/#">
+  <div id="overlay">
+    <span id="plus"><p class="t1">GUAU!</p></span><!-- $TITULO -->
+  </div>
+  </a>
+</div>
+<!-- modulo a repetir --><!-- modulo a repetir -->
+<div id="box" style="background: url('https://img.youtube.com/vi/y31FuQgS7uo/hqdefault.jpg');background-size: cover;background-position:center center;background-size: 110%;"><!-- url('img/$imagenXX') -->
+  <a href="/#">
+  <div id="overlay">
+    <span id="plus"><p class="t1">TITULO</p></span><!-- $TITULO -->
+  </div>
+  </a>
+</div>
+<!-- modulo a repetir -->
+
+</div>
+   <div class="owl-controls">
+</div>
+</div><!-- fin row carusel -->
+</div><!-- fin container -->
+<div class="row-fluid strip_sponsors">
+<div class="col-md-12 t1" style="text-align: center;padding: 10px 0 45px 0;">CON EL APOYO DE CONTENIDOS DE</div>
+<div class="col-md-2"></div>
+<div class="col-md-2 centro" ><a href="/#"><img src="img/logo_atei.jpg" width="60%" class="img_adjust" style="position: relative;top:-23px;"></div></a>
+<div class="col-md-2 centro" ><a href="/#"><img src="img/renau.jpg" width="47%" class="img_adjust"></div></a>
+<div class="col-md-2 centro"><a href="/#"><img src="img/bacua.jpg" width="50%" class="img_adjust" style="position: relative;top:-8px;"></div></a>
+<div class="col-md-2 centro"><a href="/#"><img src="img/cin.png" width="45%" class="img_adjust" style="position: relative;top:5px;"></div></a>
+
+
+<div class="col-md-2"></div>
+
+
+</div>
+
+  <script src="js/scripts.js"></script>
+</body>
+</html>
+<script type="text/javascript">
+function getYouTubeInfo() {
+$.ajax({
+url: "https://www.googleapis.com/youtube/v3/videos?id=_hi_IyfrZfM&key=AIzaSyDDBk8tAkod1VRRNyFZF09fgQyMpnSe5HI&fields=items(snippet(title))&part=snippet",
+dataType: "jsonp",
+success: function (data) {parseresults(data)}
+});
+}
+function parseresults(data) {
+ var items = data.items[0];
+var ytvtit = items.snippet.title;
+
+ 
+$('#ytTitle').html(ytvtit);
+
+}
+ 
+$(document).ready(function () {
+getYouTubeInfo();
+});
+ 
+ 
+</script>
+https://www.youtube.com/watch?v=
